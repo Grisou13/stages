@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/stages":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/stages","hostpath":"C:/dev/stages","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/dev/stages","disabled":false,"__vagrantfile":true}}}

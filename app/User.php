@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'intranet_id'
     ];
 
     /**
@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function tasks(){
+        return $this->hasMany(Task::class);
+    }
+    public function isTeacher(){
+        return false;//TODO
+    }
+    public function isStudent(){
+        return true;//TODO
+    }
+    public function checkLevel($level){
+        return false;//TODO
+    }
 }
