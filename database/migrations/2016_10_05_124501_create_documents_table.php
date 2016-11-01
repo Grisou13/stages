@@ -15,6 +15,17 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('filename');
+            $table->timestamps();
+        });
+        Schema::create('document_versions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('document_id')->unsigned();
+            $table->foreign('document_id')->references('id')->on('documents');
+            $table->string('version');
+            $table->string('revision_number');
+            $table->string('hash');
+            $table->string('path');
             $table->timestamps();
         });
     }

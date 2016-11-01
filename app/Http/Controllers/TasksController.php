@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Task;
-use Illuminate\Http\Request;
+
 
 use App\Http\Requests;
+use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
@@ -17,11 +18,12 @@ class TasksController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        return $request->user()->tasks();
+        return view('tasks',[ 'tasks'=>$request->user()->tasks() ]);
     }
 
     /**

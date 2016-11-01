@@ -14,6 +14,15 @@ class TaskBoardController extends Controller
 
     }
 
+    public function student()
+    {
+
+    }
+    public function teacher()
+    {
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +30,7 @@ class TaskBoardController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**

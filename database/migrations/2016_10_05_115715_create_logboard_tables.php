@@ -25,9 +25,9 @@ class CreateLogboardTables extends Migration
             $table->date('finish')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->integer('status_id');
+            $table->integer('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('status');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

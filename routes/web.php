@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',function(\Illuminate\Http\Request $request){
+    dd($request->headers);
+
+   return view('home',['user'=>$request->header('X-Forwarded-User')]);
 });
+/** @var \Illuminate\Routing\Router $router */
+$router->resource('tasks','TaskBoardController');
+//Route::get('/', 'HomeController@index');
 
 Auth::routes();
 

@@ -14,6 +14,10 @@ require('laravel-elixir-vue');
  */
 
 elixir(mix => {
+
     mix.sass('app.scss')
        .webpack('app.js');
+
+    mix.sass('setup.sass','public/css/setup.css')
+        .rullup('setup.js','public/js/setup.js');
 });
